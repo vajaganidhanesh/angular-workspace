@@ -11,24 +11,51 @@
   </table>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
   <div class="row">
     <div class="col-3">
       <input
         type="text"
-        [(ngModel)]="userName"
+        [(ngModel)]="Product.Name"
         class="form-control"
         name=""
         id=""
       />
-      <input type="text" class="form-control" ngModel #name name="" id="" />
+      <input
+        type="number"
+        [(ngModel)]="Product.Price"
+        class="form-control"
+        name=""
+        id=""
+      />
+
+      <div class="form-switch">
+        <input
+          type="checkbox"
+          [(ngModel)]="Product.Stock"
+          class="form-check"
+          name=""
+          id=""
+        />
+      </div>
+
+      <select class="form-select" [(ngModel)]="Product.Shipped">
+        <option>Delhi</option>
+        <option>andhra</option>
+      </select>
+      <!-- <input type="text" class="form-control" ngModel #name name="" id="" /> -->
     </div>
     <div class="col-9">
+      <div [innerHTML]="Product.Name" class="row"></div>
       <div class="row">
-        {{ userName }}
+        {{ Product.Price }}
       </div>
       <div class="row">
-        {{ name.value }}
+        {{ Product.Stock === true ? "Available" : "Out of stock" }}
+      </div>
+
+      <div class="row">
+        {{ Product.Shipped }}
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { productContract } from '../../contracts/formdata';
 @Component({
   selector: 'app-bindcomponent',
   templateUrl: './bindcomponent.component.html',
@@ -10,4 +10,11 @@ export class BindcomponentComponent {
   public stock: boolean = false;
   public twidth: number = 200;
   public theight: number = 150;
+
+  Product: productContract = {
+    Name: 'sdf',
+    Price: 0,
+    Stock: false,
+    Shipped: 'selectone',
+  };
 }

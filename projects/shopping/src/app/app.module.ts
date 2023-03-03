@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { netflixRegister } from '../app/components/netflix-register.component';
 import { LoginComponent } from './components/logincomponent/login.component';
@@ -9,6 +9,7 @@ import { NetflixHeaderComponent } from './Netflix/netflix-header/netflix-header.
 import { NetflixIndexComponent } from './Netflix/netflix-index/netflix-index.component';
 import { NetflixMainComponent } from './Netflix/netflix-main/netflix-main.component';
 import { NetflixRegisterComponent } from './Netflix/netflix-register/netflix-register.component';
+import { BindcomponentComponent } from './components/bindcomponent/bindcomponent.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,10 @@ import { NetflixRegisterComponent } from './Netflix/netflix-register/netflix-reg
     NetflixIndexComponent,
     NetflixMainComponent,
     NetflixRegisterComponent,
+    BindcomponentComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [NetflixIndexComponent],
+  bootstrap: [BindcomponentComponent],
 })
 export class AppModule {}
