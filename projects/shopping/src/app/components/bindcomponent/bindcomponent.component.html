@@ -1,0 +1,12 @@
+<div class="container-fluid g-5">
+  <!-- interpolation in angular -->
+  <div>Hello {{ userName }}</div>
+  <!-- property binding -->
+  <input type="checkbox" checked="{{ stock }}" name="" id="" />
+  <input type="checkbox" [checked]="stock" name="" id="" />
+  <table border="1" [width]="twidth" [attr.height]="theight">
+    <tr>
+      <td>Username</td>
+    </tr>
+  </table>
+</div>
