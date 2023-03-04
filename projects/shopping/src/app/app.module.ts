@@ -10,6 +10,7 @@ import { NetflixIndexComponent } from './Netflix/netflix-index/netflix-index.com
 import { NetflixMainComponent } from './Netflix/netflix-main/netflix-main.component';
 import { NetflixRegisterComponent } from './Netflix/netflix-register/netflix-register.component';
 import { BindcomponentComponent } from './components/bindcomponent/bindcomponent.component';
+import { FakestoreapiComponent } from './components/fakestoreapi/fakestoreapi.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,10 @@ import { BindcomponentComponent } from './components/bindcomponent/bindcomponent
     NetflixMainComponent,
     NetflixRegisterComponent,
     BindcomponentComponent,
+    FakestoreapiComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [BindcomponentComponent],
+  bootstrap: [FakestoreapiComponent],
 })
 export class AppModule {}
