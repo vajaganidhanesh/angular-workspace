@@ -1,5 +1,10 @@
 <div class="container-fluid">
   <h1>Product details</h1>
+  <div class="position-fixed top-50 start-50">
+    <textarea name="" id="" cols="40" rows="4" *ngIf="true">
+      {{ Product.description }}
+    </textarea>
+  </div>
   <dl>
     <dt>Title</dt>
     <dd>{{ Product.title }}</dd>
