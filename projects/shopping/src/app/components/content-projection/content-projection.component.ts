@@ -8,6 +8,7 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 export class ContentProjectionComponent implements OnInit {
   constructor() {}
   public ThenBlock: TemplateRef<any> | null = null;
+  public TemplateName: string = 'choose Template';
 
   @ViewChild('Template1', { static: true })
   public Template1: TemplateRef<any> | null = null;
@@ -18,5 +19,22 @@ export class ContentProjectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.ThenBlock = this.Template3;
+  }
+
+  templateChange(): void {
+    switch (this.TemplateName) {
+      case 'Template1':
+        this.ThenBlock = this.Template1;
+        break;
+      case 'Template2':
+        this.ThenBlock = this.Template2;
+        break;
+      case 'Template3':
+        this.ThenBlock = this.Template3;
+        break;
+      default:
+        this.ThenBlock = this.Template1;
+        break;
+    }
   }
 }
