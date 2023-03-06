@@ -1,43 +1,61 @@
 <div class="container-fluid">
-  <h1>Product details</h1>
-  <div class="position-fixed top-50 start-50">
-    <textarea name="" id="" cols="40" rows="4" *ngIf="toggleDescription.value">
-      {{ Product.description }}
-    </textarea>
-  </div>
-  <div class="form-switch">
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        value=""
-        id=""
-        ngModel
-        #toggleDescription="ngModel"
-      />
-      <label class="form-check-label" for=""> description</label>
+  <div class="row">
+    <div
+      class="col-3"
+      *ngIf="toggleDescription.value; then details; else without"
+    ></div>
+    <h1>Product details</h1>
+    <div class="col-9">
+      <ng-template #details>
+        <textarea
+          name=""
+          id=""
+          cols="40"
+          rows="4"
+          *ngIf="toggleDescription.value"
+        >
+        {{ Product.description }}
+      </textarea
+        >
+      </ng-template>
+      <ng-template #without>
+        <div>Description</div>
+      </ng-template>
     </div>
+    <div class="form-switch">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id=""
+          ngModel
+          #toggleDescription="ngModel"
+        />
+        <label class="form-check-label" for=""> description</label>
+      </div>
+    </div>
+    <dl>
+      <dt>Title</dt>
+      <dd>{{ Product.title }}</dd>
+      <dt>Price</dt>
+      <dd>{{ Product.price }}</dd>
+      <dt>Preview</dt>
+      <dd>
+        <img [src]="Product.image" width="200" height="200" alt="" />
+      </dd>
+      <dt>Rating</dt>
+      <dd>
+        <span class="bi bi-star-fill text-success"
+          >{{ Product.rating.rate }} [{{ Product.rating.count }}]</span
+        >
+      </dd>
+    </dl>
+    <button (click)="PrevClick()" class="btn btn-success me-2">
+      <span class="bi bi-chevron-left"></span>
+    </button>
+    <button (click)="NextClick()" class="btn btn-success">
+      <span class="bi bi-chevron-right"></span>
+    </button>
   </div>
-  <dl>
-    <dt>Title</dt>
-    <dd>{{ Product.title }}</dd>
-    <dt>Price</dt>
-    <dd>{{ Product.price }}</dd>
-    <dt>Preview</dt>
-    <dd>
-      <img [src]="Product.image" width="200" height="200" alt="" />
-    </dd>
-    <dt>Rating</dt>
-    <dd>
-      <span class="bi bi-star-fill text-success"
-        >{{ Product.rating.rate }} [{{ Product.rating.count }}]</span
-      >
-    </dd>
-  </dl>
-  <button (click)="PrevClick()" class="btn btn-success me-2">
-    <span class="bi bi-chevron-left"></span>
-  </button>
-  <button (click)="NextClick()" class="btn btn-success">
-    <span class="bi bi-chevron-right"></span>
-  </button>
 </div>
