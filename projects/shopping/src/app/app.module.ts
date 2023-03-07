@@ -12,6 +12,7 @@ import { NetflixRegisterComponent } from './Netflix/netflix-register/netflix-reg
 import { BindcomponentComponent } from './components/bindcomponent/bindcomponent.component';
 import { FakestoreapiComponent } from './components/fakestoreapi/fakestoreapi.component';
 import { ContentProjectionComponent } from './components/content-projection/content-projection.component';
+import { MobileComponentComponent } from './components/mobile-component/mobile-component.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,10 @@ import { ContentProjectionComponent } from './components/content-projection/cont
     BindcomponentComponent,
     FakestoreapiComponent,
     ContentProjectionComponent,
+    MobileComponentComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [ContentProjectionComponent],
+  bootstrap: [MobileComponentComponent],
 })
 export class AppModule {}

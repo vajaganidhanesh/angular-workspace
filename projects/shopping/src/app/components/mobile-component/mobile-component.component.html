@@ -1,0 +1,113 @@
+<div class="container-fluid">
+  <div class="row mt-3 g-0">
+    <div class="col-lg-1 order-sm-1 order-lg-0 col-md-12">
+      <nav class="d-md-flex d-lg-block .justify-content-md-between">
+        <div (mouseover)="ChangeView('View1')">
+          <img
+            class="figure-img mt-2"
+            src="assets/mobile-1.webp"
+            width="40"
+            height="50"
+          />
+        </div>
+        <div (mouseover)="ChangeView('View2')">
+          <img
+            class="figure-img mt-2"
+            src="assets/mobile-2.webp"
+            width="30"
+            height="50"
+          />
+        </div>
+        <div (mouseover)="ChangeView('View3')">
+          <img
+            class="figure-img mt-2"
+            src="assets/mobile-3.webp"
+            width="30"
+            height="50"
+          />
+        </div>
+        <div (mouseover)="ChangeView('View4')">
+          <img
+            class="figure-img mt-2"
+            src="assets/mobile-4.webp"
+            width="30"
+            height="50"
+          />
+        </div>
+
+        <div (mouseover)="ChangeView('View5')">
+          <img
+            class="figure-img mt-2"
+            src="assets/mobile-5.webp"
+            width="30"
+            height="50"
+          />
+        </div>
+
+        <div (mouseover)="ChangeView('View6')">
+          <img
+            class="figure-img mt-2"
+            src="assets/mobile-6.webp"
+            width="30"
+            height="50"
+          />
+        </div>
+      </nav>
+    </div>
+    <div
+      class="col-lg-4 order-lg-1 order-sm-0 d-flex justify-content-center align-items-center"
+    >
+      <div *ngIf="true; then ThenBlock"></div>
+      <div>
+        <ng-template #View1>
+          <img src="assets/mobile-1.webp" width="340" height="450" alt="" />
+        </ng-template>
+        <ng-template #View2>
+          <img src="assets/mobile-2.webp" width="220" height="450" alt="" />
+        </ng-template>
+        <ng-template #View3>
+          <img src="assets/mobile-3.webp" width="220" height="450" alt="" />
+        </ng-template>
+        <ng-template #View4>
+          <img src="assets/mobile-4.webp" width="220" height="450" alt="" />
+        </ng-template>
+        <ng-template #View5>
+          <img src="assets/mobile-5.webp" width="220" height="450" alt="" />
+        </ng-template>
+        <ng-template #View6>
+          <img src="assets/mobile-6.webp" width="220" height="450" alt="" />
+        </ng-template>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-7 order-lg-2 order-sm-3 ps-5">
+      <div class="h4">OPPO Reno8T 5G (Midnight Black, 128 GB) (8 GB RAM)</div>
+      <div>
+        <span class="bg-success text-white rounded-2 ps-1 pb-1">
+          <span class="small ps-1">4.2</span>
+          <span class="bi-star-fill small pe-1 ps-1"></span>
+        </span>
+
+        <span class="ps-3 text-secondary fw-bold"
+          >2,639 Ratings & 292 Reviews</span
+        >
+      </div>
+      <div class="mt-2">
+        <span class="text-success fw-semibold">Extra ₹9000 off </span>
+      </div>
+      <div class="">
+        <span class="fs-2">₹29,999</span>
+        <span class="ps-3"><del>₹38,999</del></span>
+        <span class="text-success fw-semibold ps-3"> 23% off</span>
+      </div>
+      <div>
+        <span>AVAILABLE</span>
+      </div>
+      <div>
+        <span>
+          <span class="bi bi-tag-fill text-success"></span>
+          <span>Flipkart Pay Later</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
