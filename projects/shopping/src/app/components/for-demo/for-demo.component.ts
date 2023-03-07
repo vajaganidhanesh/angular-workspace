@@ -17,4 +17,15 @@ export class ForDemoComponent {
       products: ['shirts', 'pants'],
     },
   ];
+
+  public Products: { Name: string; Price: number }[] = [
+    {
+      Name: 'Samsung Tv',
+      Price: 73000,
+    },
+    {
+      Name: 'Samsung Tv',
+      Price: 73000,
+    },
+  ];
 }
