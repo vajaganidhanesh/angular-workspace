@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <div class="btn-group-vertical">
+        <button
+          class="btn btn-primary mt-1 w-100"
+          (click)="ViewChange('BasicDetails')"
+        >
+          Basic Details
+        </button>
+        <button
+          class="btn btn-primary mt-1 w-100"
+          (click)="ViewChange('Preview')"
+        >
+          Preview
+        </button>
+        <button
+          class="btn btn-primary mt-1 w-100"
+          (click)="ViewChange('Description')"
+        >
+          Description
+        </button>
+      </div>
+      <div>
+        <select class="form-select mt-4" [(ngModel)]="ViewName">
+          <option value="info">Select Info</option>
+          <option value="BasicDetails">BasicDetails</option>
+          <option value="Preview">Preview</option>
+          <option value="Description">Description</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-10">
+      <div [ngSwitch]="ViewName">
+        <div *ngSwitchCase="'BasicDetails'">
+          <h4>OPPO Reno8T 5G (Midnight Black, 128 GB) (8 GB RAM)</h4>
+          <span class="bg-success text-white rounded-2 ps-1 pb-1">
+            <span class="small ps-1">4.2</span>
+            <span class="bi-star-fill small pe-1 ps-1"></span>
+          </span>
+
+          <span class="ps-3 text-secondary fw-bold"
+            >2,639 Ratings & 292 Reviews</span
+          >
+          <div class="">
+            <span class="fs-2">₹29,999</span>
+            <span class="ps-3"><del>₹38,999</del></span>
+            <span class="text-success fw-semibold ps-3"> 23% off</span>
+          </div>
+        </div>
+        <div *ngSwitchCase="'Preview'">
+          <img src="assets/mobile-1.webp" width="340" height="450" alt="" />
+        </div>
+        <div *ngSwitchCase="'Description'">
+          <h3>Available Offers</h3>
+          <ul class="list-unstyled">
+            <li class="bi bi-tag-fill text-success">
+              <span class="text-black"> Flipkart Pay Later </span>
+            </li>
+            <li class="bi bi-tag-fill text-success">
+              <span class="text-black">
+                Bank Offer10% off on ICICI Bank Credit Card Transactions, up to
+                ₹750, on orders of ₹5,000 and above
+              </span>
+            </li>
+            <li class="bi bi-tag-fill text-success">
+              <span class="text-black">
+                Bank Offer10% off on ICICI Bank Credit Card EMI Transactions, up
+                to ₹750, on orders of ₹5,000 and above
+              </span>
+            </li>
+            <li class="bi bi-tag-fill text-success">
+              <span class="text-black">
+                Bank OfferFlat ₹100 Instant Cashback on Paytm Wallet. Min Order
+                Value ₹1000. Valid once per Paytm account
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div *ngSwitchDefault>
+          <h1>Please select contact info</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

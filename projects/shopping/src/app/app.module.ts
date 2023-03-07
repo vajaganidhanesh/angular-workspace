@@ -13,6 +13,7 @@ import { BindcomponentComponent } from './components/bindcomponent/bindcomponent
 import { FakestoreapiComponent } from './components/fakestoreapi/fakestoreapi.component';
 import { ContentProjectionComponent } from './components/content-projection/content-projection.component';
 import { MobileComponentComponent } from './components/mobile-component/mobile-component.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import { MobileComponentComponent } from './components/mobile-component/mobile-c
     FakestoreapiComponent,
     ContentProjectionComponent,
     MobileComponentComponent,
+    ProductDetailsComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [MobileComponentComponent],
+  bootstrap: [ProductDetailsComponent],
 })
 export class AppModule {}
