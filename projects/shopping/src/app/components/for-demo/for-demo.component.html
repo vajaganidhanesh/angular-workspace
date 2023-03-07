@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="mt-4 row">
+    <div class="col">
+      <h1>Electronics</h1>
+      <ol>
+        <li *ngFor="let items of Categories">{{ items }}</li>
+      </ol>
+    </div>
+    <div class="col">
+      <h1>selector</h1>
+      <select class="form-select">
+        <option *ngFor="let items of Categories">{{ items }}</option>
+      </select>
+    </div>
+    <div class="col">
+      <h1>DropDown</h1>
+      <ul class="list-unstyled">
+        <li *ngFor="let item of Categories">
+          <input type="checkbox" name="" id="" />
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+    <div class="col">
+      <h1>buttons</h1>
+      <div class="btn-group-vertical">
+        <button class="btn btn-primary mb-1" *ngFor="let item of Categories">
+          {{ item }}
+        </button>
+      </div>
+      <div>
+        <div *ngFor="let items of Categories">
+          <a href="#">{{ items }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-primary text-white">
+  <div class="row-cols-1 g-1">
+    <div class="col bg-primary">hello</div>
+    <div class="col bg-primary">hello</div>
+    <div class="col bg-primary">hello</div>
+    <div class="col bg-primary">hello</div>
+    <div class="col bg-primary">hello</div>
+  </div>
+</div>

@@ -14,6 +14,7 @@ import { FakestoreapiComponent } from './components/fakestoreapi/fakestoreapi.co
 import { ContentProjectionComponent } from './components/content-projection/content-projection.component';
 import { MobileComponentComponent } from './components/mobile-component/mobile-component.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ForDemoComponent } from './components/for-demo/for-demo.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +31,10 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     ContentProjectionComponent,
     MobileComponentComponent,
     ProductDetailsComponent,
+    ForDemoComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [ProductDetailsComponent],
+  bootstrap: [ForDemoComponent],
 })
 export class AppModule {}
