@@ -87,7 +87,7 @@
   </div>
 </div> -->
 
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="row">
     <div>
       <div class="table-responsive">
@@ -133,6 +133,30 @@
           </tbody>
         </table>
       </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="table-responsive col-4">
+      <button class="btn btn-primary" (click)="UpdateClick()">update</button>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Sl.No</th>
+            <th scope="col">Users</th>
+            <th scope="col">Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i = index; trackBy: TrackChange">
+            <td>{{ i + 1 }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.age }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

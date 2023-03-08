@@ -7,7 +7,11 @@ import { fakestoreapiContract } from '../../contracts/fakestoreapi';
   styleUrls: ['./for-demo.component.css'],
 })
 export class ForDemoComponent implements OnInit {
-  // public Categories: string[] = ['All', 'Electronics', 'Footwear', 'Fashion'];
+  public users: { name: string; age: number }[] = [
+    { name: 'alex', age: 23 },
+    { name: 'paul', age: 23 },
+    { name: 'john', age: 23 },
+  ];
   public Categories: { categories: string; products: string[] }[] = [
     {
       categories: 'Electronics',
@@ -39,5 +43,17 @@ export class ForDemoComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+  }
+  public UpdateClick() {
+    this.users = [
+      { name: 'alex', age: 23 },
+      { name: 'paul', age: 23 },
+      { name: 'john', age: 23 },
+      { name: 'john', age: 23 },
+    ];
+  }
+
+  public TrackChange(index: number): number {
+    return index;
   }
 }
