@@ -16,6 +16,7 @@ import { MobileComponentComponent } from './components/mobile-component/mobile-c
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ForDemoComponent } from './components/for-demo/for-demo.component';
 import { BookingSiteComponent } from './components/booking-site/booking-site.component';
+import { ClassBindComponent } from './components/class-bind/class-bind.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +35,10 @@ import { BookingSiteComponent } from './components/booking-site/booking-site.com
     ProductDetailsComponent,
     ForDemoComponent,
     BookingSiteComponent,
+    ClassBindComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [BookingSiteComponent],
+  bootstrap: [ClassBindComponent],
 })
 export class AppModule {}

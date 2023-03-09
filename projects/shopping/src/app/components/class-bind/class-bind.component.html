@@ -1,0 +1,112 @@
+<div class="container-fluid g-0">
+  <div class="input-group">
+    <div>
+      <label for="" class="form-label">style-1</label>
+      <input
+        class="form-check"
+        ngModel
+        #style1="ngModel"
+        type="checkbox"
+        name=""
+        id=""
+      />
+    </div>
+    <label for="" class="form-label">style-2</label>
+    <input
+      class="form-check"
+      ngModel
+      #style2="ngModel"
+      type="checkbox"
+      name=""
+      id=""
+    />
+    <label for="" class="form-label">style-3</label>
+
+    <input
+      class="form-check"
+      ngModel
+      #style3="ngModel"
+      type="checkbox"
+      name=""
+      id=""
+    />
+  </div>
+  <h1 [ngClass]="'bg-style'">hello</h1>
+  <h1
+    [ngClass]="{
+      'border-style ': style1.value,
+      'bg-style': style2.value,
+      'text-style': style3.value
+    }"
+  >
+    hello
+  </h1>
+</div>
+
+<div class="container-fluid d-flex justify-content-center align-items-center">
+  <div>
+    <div class="form-switch">
+      <input
+        type="checkbox"
+        ngModel
+        #darkModel="ngModel"
+        class="form-check-input"
+      />
+      <label>change</label>
+    </div>
+
+    <form
+      class="border p-2 border-1"
+      [ngClass]="{ 'bg-dark': darkModel.value }"
+    >
+      <h2><span class="bi bi-person-fill"></span>User Login</h2>
+      <dl>
+        <dt>User Name</dt>
+        <dd></dd>
+        <input class="form-control" type="text" />
+        <dt>Password</dt>
+        <dd>
+          <input type="password" class="form-control" name="" id="" />
+        </dd>
+      </dl>
+      <button class="btn btn-dark text-white w-100">submit</button>
+    </form>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <dl>
+        <dt>UserName</dt>
+        <dd>
+          <input
+            type="text"
+            name=""
+            ngModel
+            #value="ngModel"
+            class="form-control"
+            required="true"
+            minlength="4"
+            [ngClass]="{ 'border-color': value.invalid }"
+            id=""
+          />
+        </dd>
+        <dt>Password</dt>
+        <dd>
+          <input
+            type="password"
+            ngModel
+            #password="ngModel"
+            required
+            minlength="6"
+            [ngClass]="{ 'border-color': password.invalid }"
+            class="form-control"
+            name=""
+            id=""
+          />
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
