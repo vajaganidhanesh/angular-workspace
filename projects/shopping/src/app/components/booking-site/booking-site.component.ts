@@ -10,6 +10,9 @@ export class BookingSiteComponent implements OnInit {
   constructor() {}
   public Categories: string[] = [];
   public Products: fakestoreapiContract[] = [];
+  public CartItems: fakestoreapiContract[] = [];
+  public CartItemsCount: number = 0;
+  public isCartVisible: Boolean = false;
 
   public LoadCategories(): void {
     fetch('http://fakestoreapi.com/products/categories')
@@ -30,11 +33,36 @@ export class BookingSiteComponent implements OnInit {
       });
   }
 
+  public GetCartItemsCount(): void {
+    this.CartItemsCount = this.CartItems.length;
+  }
+
   public Onchange(value: string): void {
     if (value === 'all') {
       this.LoadProducts(`http://fakestoreapi.com/products`);
     } else {
       this.LoadProducts(`http://fakestoreapi.com/products/category/${value}`);
+    }
+  }
+
+  async AddToCart(itemId: number): Promise<void> {
+    const response = await fetch(`http://fakestoreapi.com/products/${itemId}`);
+    const data = await response.json();
+    console.log(data);
+    this.CartItems.push(data);
+    this.GetCartItemsCount();
+    alert(`${data.title} Added to Cart`);
+  }
+
+  public Toggle(): void {
+    this.isCartVisible = this.isCartVisible === false ? true : false;
+  }
+
+  public RemoveItem(index: number): void {
+    let flag = confirm('Are you sure want to delete this item? ');
+    if (flag === true) {
+      this.CartItems.splice(index, 1);
+      this.GetCartItemsCount();
     }
   }
 

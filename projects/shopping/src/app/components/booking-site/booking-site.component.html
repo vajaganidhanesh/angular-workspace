@@ -4,9 +4,11 @@
       <h1>Shopper.</h1>
     </div>
     <nav>
-      <button class="btn">Home</button>
-      <button class="btn">Electronics</button>
-      <button class="btn">Men's Fashion</button>
+      <button class="btn" (click)="Onchange('all')">Home</button>
+      <button class="btn" (click)="Onchange('electronics')">Electronics</button>
+      <button class="btn" (click)="Onchange('mens fashion')">
+        Men's Fashion
+      </button>
       <button class="btn">Women's Fashion</button>
       <button class="btn">Jewelery</button>
     </nav>
@@ -20,9 +22,11 @@
       <button class="btn">
         <span class="bi bi-person"></span>
       </button>
-      <button class="btn position-relative">
+      <button class="btn position-relative" (click)="Toggle()">
         <span class="bi bi-cart"></span>
-        <span class="badge bg-danger rounded-circle position-absolute">0</span>
+        <span class="badge bg-danger rounded-circle position-absolute"
+          >{{ CartItemsCount }}
+        </span>
       </button>
     </div>
   </header>
@@ -46,6 +50,36 @@
           </option>
         </select>
       </div>
+
+      <div class="mt-3" *ngIf="isCartVisible">
+        <table class="table table-secondary table-hover">
+          <thead>
+            <tr>
+              <td>Title</td>
+              <td>Preview</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cart of CartItems; let i = index">
+              <td>{{ cart.title }}</td>
+              <td>
+                <img
+                  [src]="cart.image"
+                  width="50"
+                  height="50"
+                  class="img-fluid"
+                  alt=""
+                />
+              </td>
+              <td>
+                <button class="btn btn-danger" (click)="RemoveItem(i)">
+                  <span class="bi bi-trash-fill text-white"></span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </nav>
     <main class="col-10 d-flex flex-wrap overflow-auto" style="height: 80vh">
       <div
@@ -60,7 +94,7 @@
         <div class="card-body">
           <dl>
             <dt>Price</dt>
-            <dd>{{ product.price }}</dd>
+            <dd>$ {{ product.price }}</dd>
             <dt>Rating</dt>
             <dd>
               <span class="bi bi-star-fill text-success"> </span>
@@ -70,7 +104,7 @@
         </div>
 
         <div class="card-footer">
-          <button class="btn btn-danger">
+          <button class="btn btn-danger" (click)="AddToCart(product.id)">
             <span class="bi bi-cart-fill"></span>
             add to cart
           </button>
