@@ -33,12 +33,15 @@ export class ForDemoComponent implements OnInit {
       Price: 73000,
     },
   ];
+  public MarsObject: any = {};
   public Product: fakestoreapiContract[] = [];
   async ngOnInit(): Promise<void> {
     try {
-      const response = await fetch('http://fakestoreapi.com/products');
+      const response = await fetch(
+        'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1&api_key=DEMO_KEY'
+      );
       const data = await response.json();
-      this.Product = data;
+      this.MarsObject = data;
       console.log(data);
     } catch (error) {
       console.log(error);
@@ -56,4 +59,12 @@ export class ForDemoComponent implements OnInit {
   public TrackChange(index: number): number {
     return index;
   }
+
+  // async ngOnit(): Promise<void> {
+  //   const response = await fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY')
+  //   const data =await response.json()
+  //   this.MarsObject = data;
+  //   console.log(data);
+
+  //   }
 }

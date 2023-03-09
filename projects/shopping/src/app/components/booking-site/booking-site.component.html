@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <header class="d-flex justify-content-between p-2 align-items-center">
+    <div>
+      <h1>Shopper.</h1>
+    </div>
+    <nav>
+      <button class="btn">Home</button>
+      <button class="btn">Electronics</button>
+      <button class="btn">Men's Fashion</button>
+      <button class="btn">Women's Fashion</button>
+      <button class="btn">Jewelery</button>
+    </nav>
+    <div>
+      <button class="btn">
+        <span class="bi bi-search fw-bold"></span>
+      </button>
+      <button class="btn">
+        <span class="bi bi-heart"></span>
+      </button>
+      <button class="btn">
+        <span class="bi bi-person"></span>
+      </button>
+      <button class="btn position-relative">
+        <span class="bi bi-cart"></span>
+        <span class="badge bg-danger rounded-circle position-absolute">0</span>
+      </button>
+    </div>
+  </header>
+  <div class="bg-black p-2 text-white text-center">
+    <span class="bi bi-star-fill pe-2"></span>
+    HAPPY HOLIDAY DEALS ON EVERYTHING
+    <span class="bi bi-star-fill ps-2"></span>
+  </div>
+  <section class="mt-2 row">
+    <nav class="col-2">
+      <div>
+        <label class="form-label fs-2 fw-bold">select</label>
+        <select
+          (change)="Onchange(categories.value)"
+          ngModel
+          #categories
+          class="form-select"
+        >
+          <option *ngFor="let items of Categories" [value]="items">
+            {{ items | uppercase }}
+          </option>
+        </select>
+      </div>
+    </nav>
+    <main class="col-10 d-flex flex-wrap overflow-auto" style="height: 80vh">
+      <div
+        *ngFor="let product of Products"
+        class="card p-2 m-2 img-fluid"
+        style="width: 235px; height: auto"
+      >
+        <img [src]="product.image" />
+        <div class="card-header bg-transparent" style="height: auto">
+          <p>{{ product.title }}</p>
+        </div>
+        <div class="card-body">
+          <dl>
+            <dt>Price</dt>
+            <dd>{{ product.price }}</dd>
+            <dt>Rating</dt>
+            <dd>
+              <span class="bi bi-star-fill text-success"> </span>
+              {{ product.rating.rate }} [{{ product.rating.count }}]
+            </dd>
+          </dl>
+        </div>
+
+        <div class="card-footer">
+          <button class="btn btn-danger">
+            <span class="bi bi-cart-fill"></span>
+            add to cart
+          </button>
+        </div>
+      </div>
+    </main>
+  </section>
+</div>

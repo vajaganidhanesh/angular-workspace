@@ -15,6 +15,7 @@ import { ContentProjectionComponent } from './components/content-projection/cont
 import { MobileComponentComponent } from './components/mobile-component/mobile-component.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ForDemoComponent } from './components/for-demo/for-demo.component';
+import { BookingSiteComponent } from './components/booking-site/booking-site.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,10 @@ import { ForDemoComponent } from './components/for-demo/for-demo.component';
     MobileComponentComponent,
     ProductDetailsComponent,
     ForDemoComponent,
+    BookingSiteComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [ForDemoComponent],
+  bootstrap: [BookingSiteComponent],
 })
 export class AppModule {}
