@@ -13,6 +13,8 @@ export class BookingSiteComponent implements OnInit {
   public CartItems: fakestoreapiContract[] = [];
   public CartItemsCount: number = 0;
   public isCartVisible: Boolean = false;
+  public price: number = 0;
+  public quantity: number = 0;
 
   public LoadCategories(): void {
     fetch('http://fakestoreapi.com/products/categories')
@@ -52,15 +54,19 @@ export class BookingSiteComponent implements OnInit {
     this.CartItems.push(data);
     this.GetCartItemsCount();
     alert(`${data.title} Added to Cart`);
+    this.price = this.price + data.price;
+    this.quantity = this.quantity + 1;
   }
 
   public Toggle(): void {
     this.isCartVisible = this.isCartVisible === false ? true : false;
   }
 
-  public RemoveItem(index: number): void {
+  public RemoveItem(index: number, price: number): void {
     let flag = confirm('Are you sure want to delete this item? ');
     if (flag === true) {
+      this.price = this.price - price;
+      this.quantity = this.quantity - 1;
       this.CartItems.splice(index, 1);
       this.GetCartItemsCount();
     }

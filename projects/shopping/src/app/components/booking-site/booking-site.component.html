@@ -36,7 +36,7 @@
     <span class="bi bi-star-fill ps-2"></span>
   </div>
   <section class="mt-2 row">
-    <nav class="col-2">
+    <nav class="col-3">
       <div>
         <label class="form-label fs-2 fw-bold">select</label>
         <select
@@ -55,13 +55,15 @@
         <table class="table table-secondary table-hover">
           <thead>
             <tr>
-              <td>Title</td>
-              <td>Preview</td>
+              <td class="small">Title</td>
+              <td class="small">Preview</td>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let cart of CartItems; let i = index">
-              <td>{{ cart.title }}</td>
+              <td>
+                <small>{{ cart.title }}</small>
+              </td>
               <td>
                 <img
                   [src]="cart.image"
@@ -72,20 +74,27 @@
                 />
               </td>
               <td>
-                <button class="btn btn-danger" (click)="RemoveItem(i)">
+                <button
+                  class="btn btn-danger"
+                  (click)="RemoveItem(i, cart.price)"
+                >
                   <span class="bi bi-trash-fill text-white"></span>
                 </button>
               </td>
             </tr>
           </tbody>
+          <tfoot>
+            <td class="small">Total : {{ price }}</td>
+            <td class="small">Quantity : {{ quantity }}</td>
+          </tfoot>
         </table>
       </div>
     </nav>
-    <main class="col-10 d-flex flex-wrap overflow-auto" style="height: 80vh">
+    <main class="col-9 d-flex flex-wrap overflow-auto" style="height: 80vh">
       <div
         *ngFor="let product of Products"
         class="card p-2 m-2 img-fluid"
-        style="width: 235px; height: auto"
+        style="width: 205px; height: auto"
       >
         <img [src]="product.image" />
         <div class="card-header bg-transparent" style="height: auto">
