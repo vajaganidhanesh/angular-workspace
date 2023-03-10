@@ -1,4 +1,4 @@
-<div class="container-fluid g-0">
+<!-- <div class="container-fluid g-0">
   <div class="input-group">
     <div>
       <label for="" class="form-label">style-1</label>
@@ -108,5 +108,69 @@
         </dd>
       </dl>
     </div>
+  </div>
+</div> -->
+
+<div
+  class="container-fluid d-flex flex-column justify-content-center align-content-center"
+>
+  <div class="row-cols-6">
+    <h3>Select styles</h3>
+    <dl>
+      <dt>BackGround</dt>
+      <dd>
+        <select class="form-select" name="" id="" [(ngModel)]="bgStyle">
+          <option value="red">red</option>
+          <option value="green">green</option>
+          <option value="blue">blue</option>
+          <option value="yellow">yellow</option>
+        </select>
+      </dd>
+      <dt>Text Color</dt>
+      <dd>
+        <select class="form-select" name="" id="" [(ngModel)]="textStyle">
+          <option value="red">red</option>
+          <option value="black">black</option>
+          <option value="white">white</option>
+          <option value="yellow">yellow</option>
+        </select>
+      </dd>
+      <dt>Padding</dt>
+      <dd>
+        <span>
+          1px
+          <input
+            type="range"
+            name=""
+            value="10"
+            min="1"
+            max="50"
+            class="form-range"
+            id=""
+            [(ngModel)]="padding"
+          />
+          50px</span
+        >
+      </dd>
+      <dt>FontSize</dt>
+      <dd>
+        <input
+          (change)="fontSizes()"
+          [(ngModel)]="fontSize"
+          type="range"
+          class="form-range"
+          min="10"
+          max="50"
+        />
+      </dd>
+      <dd>
+        <button class="btn btn-secondary" (click)="applyClick()">
+          apply styles
+        </button>
+      </dd>
+    </dl>
+  </div>
+  <div class="row-cols-2 mt-3">
+    <h1 [ngStyle]="styleObject">Welcome to Angular</h1>
   </div>
 </div>
