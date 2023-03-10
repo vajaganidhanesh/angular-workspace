@@ -17,6 +17,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { ForDemoComponent } from './components/for-demo/for-demo.component';
 import { BookingSiteComponent } from './components/booking-site/booking-site.component';
 import { ClassBindComponent } from './components/class-bind/class-bind.component';
+import { EventBindingComponent } from './components/event-binding/event-binding.component';
 
 @NgModule({
   declarations: [
@@ -36,9 +37,10 @@ import { ClassBindComponent } from './components/class-bind/class-bind.component
     ForDemoComponent,
     BookingSiteComponent,
     ClassBindComponent,
+    EventBindingComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [ClassBindComponent],
+  bootstrap: [EventBindingComponent],
 })
 export class AppModule {}
