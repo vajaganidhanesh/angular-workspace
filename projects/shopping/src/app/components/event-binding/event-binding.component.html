@@ -1,10 +1,59 @@
-<div>
-  <h2>Event Binding</h2>
+<div class="container-fluid" (mousemove)="mouseMove($event)">
+  <!-- <h2>Event Binding</h2>
   <button
     class="btn btn-debug bg-secondary text-white"
     id="btn id"
     (click)="InsertClick($event)"
   >
     Insert
-  </button>
+  </button> -->
+
+  <div class="row">
+    <div class="col-12">
+      <h2>Mouse events</h2>
+      <div>
+        <img
+          [src]="img_src"
+          width="400"
+          height="350"
+          class="img-fluid mb-4"
+          border="1px"
+          alt=""
+        />
+      </div>
+      <div class="btn-group fw-bold">
+        <button
+          (mouseover)="setImages('red')"
+          name="red"
+          class="text-white btn-danger fw-bold btn"
+        >
+          redshoe
+        </button>
+        <button
+          (mouseover)="setImages('blue')"
+          name="blue"
+          class="text-white btn-primary fw-bold btn ms-2 me-2"
+        >
+          blueshoe
+        </button>
+        <button
+          (mouseover)="setImages('green')"
+          name="green"
+          class="text-white btn fw-bold"
+          style="background-color: #00ff00"
+        >
+          greenshoe
+        </button>
+      </div>
+      <div style="height: 1000px"></div>
+      <img
+        src="assets/heart_1.png"
+        class="img-fluid"
+        height="50"
+        width="50"
+        alt=""
+        [ngStyle]="styling"
+      />
+    </div>
+  </div>
 </div>
