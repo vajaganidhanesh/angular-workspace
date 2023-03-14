@@ -8,7 +8,7 @@
     Insert
   </button> -->
 
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-12">
       <h2>Mouse events</h2>
       <div>
@@ -54,6 +54,26 @@
         alt=""
         [ngStyle]="styling"
       />
+    </div>
+  </div> -->
+  <div class="row">
+    <div class="col">
+      <dl>
+        <dt>User Name</dt>
+        <dd>
+          <input type="text" name="" id="" (keyup)="validDetails($event)" />
+        </dd>
+        <dd [ngClass]="{ 'text-danger': isInValid, 'text-success': true }">
+          <small>{{ errorMessage }}</small>
+        </dd>
+        <dt>Password</dt>
+        <dd>
+          <input type="password" name="" id="" (keypress)="isKeyCode($event)" />
+        </dd>
+        <dd class="text-warning" *ngIf="isPwdWarn">
+          <span class="bi bi-exclamation-triangle-fill"></span>CAPS ON
+        </dd>
+      </dl>
     </div>
   </div>
 </div>

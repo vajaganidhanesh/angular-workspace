@@ -7,6 +7,37 @@ import { Component } from '@angular/core';
 })
 export class EventBindingComponent {
   public img_src: string = '/assets/whiteshoe.png';
+  public userDetails: any[] = [
+    { userName: 'john' },
+    { userName: 'devid' },
+    { userName: 'robort' },
+    { userName: 'albert' },
+  ];
+  public errorMessage: string = '';
+  public isInValid: boolean = false;
+  public isPwdWarn: boolean = false;
+
+  public isKeyCode(e: any): void {
+    if (e.keyCode >= 65 && e.keyCode <= 90) {
+      this.isPwdWarn = true;
+    } else {
+      this.isPwdWarn = false;
+    }
+  }
+
+  public validDetails(e: any): void {
+    for (const users of this.userDetails) {
+      if (users.userName === e.target.value) {
+        this.errorMessage = 'try another one';
+        this.isInValid = true;
+        break;
+      } else {
+        this.errorMessage = 'available';
+        this.isInValid = false;
+      }
+    }
+  }
+
   public styling: { position: string; top: string; left: string } = {
     position: '',
     left: '',
