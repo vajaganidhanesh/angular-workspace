@@ -61,18 +61,32 @@
       <dl>
         <dt>User Name</dt>
         <dd>
-          <input type="text" name="" id="" (keyup)="validDetails($event)" />
+          <input
+            type="text"
+            name=""
+            id=""
+            (blur)="isRequired($event)"
+            (keyup)="validDetails($event)"
+          />
         </dd>
         <dd [ngClass]="{ 'text-danger': isInValid, 'text-success': true }">
           <small>{{ errorMessage }}</small>
         </dd>
         <dt>Password</dt>
         <dd>
-          <input type="password" name="" id="" (keypress)="isKeyCode($event)" />
+          <input
+            type="password"
+            name=""
+            id=""
+            (focus)="passwordRequired($event)"
+            (blur)="isPasswordRequired($event)"
+            (keypress)="isKeyCode($event)"
+          />
         </dd>
         <dd class="text-warning" *ngIf="isPwdWarn">
           <span class="bi bi-exclamation-triangle-fill"></span>CAPS ON
         </dd>
+        <dd>{{ passwordError }}</dd>
       </dl>
     </div>
   </div>

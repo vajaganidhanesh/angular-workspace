@@ -7,21 +7,44 @@ import { Component } from '@angular/core';
 })
 export class EventBindingComponent {
   public img_src: string = '/assets/whiteshoe.png';
+  public errorMessage: string = '';
+  public passwordError: string = '';
+  public isInValid: boolean = false;
+  public isPwdWarn: boolean = false;
   public userDetails: any[] = [
     { userName: 'john' },
     { userName: 'devid' },
     { userName: 'robort' },
     { userName: 'albert' },
   ];
-  public errorMessage: string = '';
-  public isInValid: boolean = false;
-  public isPwdWarn: boolean = false;
 
   public isKeyCode(e: any): void {
     if (e.keyCode >= 65 && e.keyCode <= 90) {
       this.isPwdWarn = true;
     } else {
       this.isPwdWarn = false;
+    }
+  }
+
+  public isRequired(e: any) {
+    if (e.target.value === '') {
+      this.errorMessage = 'please enter username';
+      this.isInValid = true;
+    } else {
+      this.errorMessage = '';
+    }
+  }
+
+  public passwordRequired(e: any) {
+    this.passwordError = 'Caps not allowed';
+  }
+
+  public isPasswordRequired(e: any) {
+    if (e.target.value == '') {
+      this.passwordError = 'please enter username';
+      this.isInValid = true;
+    } else {
+      this.passwordError = '';
     }
   }
 
