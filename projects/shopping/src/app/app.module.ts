@@ -19,6 +19,8 @@ import { BookingSiteComponent } from './components/booking-site/booking-site.com
 import { ClassBindComponent } from './components/class-bind/class-bind.component';
 import { EventBindingComponent } from './components/event-binding/event-binding.component';
 import { EmiComponent } from './components/emi/emi.component';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/child/child.component';
 
 @NgModule({
   declarations: [
@@ -40,9 +42,11 @@ import { EmiComponent } from './components/emi/emi.component';
     ClassBindComponent,
     EventBindingComponent,
     EmiComponent,
+    ParentComponent,
+    ChildComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [EmiComponent],
+  bootstrap: [ParentComponent],
 })
 export class AppModule {}

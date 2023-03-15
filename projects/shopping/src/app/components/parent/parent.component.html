@@ -1,0 +1,14 @@
+<div
+  class="container-fluid bg-dark text-white p-5"
+  style="width: 100%; height: 500px"
+>
+  <h1>Parent Component</h1>
+  <div>{{ MsgFromChild }}</div>
+  <button class="btn text-dark fw-bold bg-white" (click)="sendData()">
+    Click here
+  </button>
+  <app-child
+    [MsgInput]="Msg"
+    (ChildClick)="getMessageFromChild($event)"
+  ></app-child>
+</div>
