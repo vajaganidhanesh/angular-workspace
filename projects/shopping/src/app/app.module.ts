@@ -21,6 +21,8 @@ import { EventBindingComponent } from './components/event-binding/event-binding.
 import { EmiComponent } from './components/emi/emi.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
+import { ProductsDataComponent } from './components/products-data/products-data.component';
+import { FiltersComponent } from './components/filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -44,9 +46,11 @@ import { ChildComponent } from './components/child/child.component';
     EmiComponent,
     ParentComponent,
     ChildComponent,
+    ProductsDataComponent,
+    FiltersComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [ParentComponent],
+  bootstrap: [ProductsDataComponent],
 })
 export class AppModule {}

@@ -1,0 +1,37 @@
+<div class="container-fluid g-0">
+  <header class="bg-dark text-white p-1 text-center">
+    <h2><span class="bi bi-cart"></span>Shopping - Online</h2>
+  </header>
+  <section class="row">
+    <div class="col-3">
+      <app-filters
+        [AllCount]="AllProducts"
+        [ElectronicsCount]="Electronics"
+        [JeweleryCount]="jewellery"
+        [MensCount]="mens"
+        [WomensCount]="womens"
+        (CategoryChanged)="GetCategoryName($event)"
+        (stringData)="getProduct($event)"
+      ></app-filters>
+    </div>
+    <div class="col-9 d-flex flex-wrap overflow-auto" style="height: 500px">
+      {{ product.name }} <br />
+      {{ product.price }}
+      <div
+        *ngFor="let item of Products"
+        class="card m-2 p-2"
+        style="width: 210px"
+      >
+        <img
+          [src]="item.image"
+          style="height: 150px"
+          class="card-img-top"
+          alt=""
+        />
+        <div class="card-header" style="height: 150px">
+          <p>{{ item.title }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

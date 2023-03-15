@@ -1,0 +1,73 @@
+<div class="ps-3">
+  <h3>Products</h3>
+  <ul class="list-unstyled">
+    <li class="d-flex justify-content-between mb-2">
+      <span
+        ><input
+          type="radio"
+          value="allproducts"
+          (change)="SendCategoryName($event)"
+          class="form-check-input"
+          name="category"
+          id=""
+        />
+        <span>All Products</span></span
+      ><span class="badge bg-dark ms-2">{{ AllCount }}</span>
+    </li>
+    <li class="d-flex justify-content-between mb-2">
+      <span
+        ><input
+          type="radio"
+          value="electronics"
+          (change)="SendCategoryName($event)"
+          class="form-check-input"
+          name="category"
+          id=""
+        />
+        <span>Electronics</span></span
+      ><span class="badge bg-dark ms-2">{{ ElectronicsCount }}</span>
+    </li>
+    <li class="d-flex justify-content-between mb-2">
+      <span
+        ><input
+          type="radio"
+          value="jewelery"
+          (change)="SendCategoryName($event)"
+          class="form-check-input"
+          name="category"
+          id=""
+        />
+        <span>Jewelery</span></span
+      ><span class="badge bg-dark ms-2">{{ JeweleryCount }}</span>
+    </li>
+    <li class="d-flex justify-content-between mb-2">
+      <span
+        ><input
+          type="radio"
+          value="men's clothing"
+          (change)="SendCategoryName($event)"
+          class="form-check-input"
+          name="category"
+          id=""
+        />
+        <span>Men's Clothing</span></span
+      ><span class="badge bg-dark ms-2">{{ MensCount }}</span>
+    </li>
+    <li class="d-flex justify-content-between mb-2">
+      <span
+        ><input
+          type="radio"
+          value="women's clothing"
+          (change)="SendCategoryName($event)"
+          class="form-check-input"
+          name="category"
+          id=""
+        />
+        <span>Women's Clothing</span></span
+      ><span class="badge bg-dark ms-2">{{ WomensCount }}</span>
+    </li>
+  </ul>
+  <button class="btn bg-dark text-white" (click)="sendButtonClick()">
+    send data
+  </button>
+</div>
