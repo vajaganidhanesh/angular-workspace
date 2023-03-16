@@ -51,6 +51,6 @@ import { FiltersComponent } from './components/filters/filters.component';
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [ProductsDataComponent],
+  bootstrap: [ParentComponent],
 })
 export class AppModule {}
