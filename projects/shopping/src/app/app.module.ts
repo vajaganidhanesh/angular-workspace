@@ -23,6 +23,7 @@ import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
 import { ProductsDataComponent } from './components/products-data/products-data.component';
 import { FiltersComponent } from './components/filters/filters.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { FiltersComponent } from './components/filters/filters.component';
     ProductsDataComponent,
     FiltersComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [ParentComponent],
 })
