@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { AppComponent } from './app.component';
 import { netflixRegister } from '../app/components/netflix-register.component';
@@ -63,6 +64,7 @@ import { MaterialDemoComponent } from './components/material-demo/material-demo.
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [MaterialDemoComponent],
