@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <h1>Bootstrap Input</h1>
+  <div class="w-25">
+    <label class="form-label">User Name</label>
+    <div>
+      <input
+        type="text"
+        placeholder="Enter Name"
+        class="form-control"
+        name=""
+        id=""
+      />
+    </div>
+    <h2>Material Input</h2>
+    <mat-form-field appearance="outline">
+      <mat-label> UserName </mat-label>
+      <input
+        type="text"
+        ngModel
+        #UserName="ngModel"
+        name=""
+        id=""
+        matInput
+        placeholder="Enter Name"
+      />
+    </mat-form-field>
+  </div>
+  <div>Hello!.. {{ UserName.value }}</div>
+</div>

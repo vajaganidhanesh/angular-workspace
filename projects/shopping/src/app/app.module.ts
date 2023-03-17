@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
 import { AppComponent } from './app.component';
 import { netflixRegister } from '../app/components/netflix-register.component';
 import { LoginComponent } from './components/logincomponent/login.component';
@@ -24,6 +28,7 @@ import { ChildComponent } from './components/child/child.component';
 import { ProductsDataComponent } from './components/products-data/products-data.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialDemoComponent } from './components/material-demo/material-demo.component';
 
 @NgModule({
   declarations: [
@@ -49,9 +54,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ChildComponent,
     ProductsDataComponent,
     FiltersComponent,
+    MaterialDemoComponent,
   ],
-  imports: [BrowserModule, FormsModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+  ],
   providers: [],
-  bootstrap: [ParentComponent],
+  bootstrap: [MaterialDemoComponent],
 })
 export class AppModule {}
