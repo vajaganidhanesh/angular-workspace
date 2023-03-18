@@ -7,6 +7,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { AppComponent } from './app.component';
 import { netflixRegister } from '../app/components/netflix-register.component';
@@ -69,6 +70,7 @@ import { MaterialDemoComponent } from './components/material-demo/material-demo.
     MatNativeDateModule,
     MatBadgeModule,
     MatButtonModule,
+    ScrollingModule,
   ],
   providers: [],
   bootstrap: [MaterialDemoComponent],

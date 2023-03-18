@@ -1,105 +1,21 @@
-<!-- <div class="container-fluid">
-  <h1>Bootstrap Input</h1>
-  <div class="w-25">
-    <label class="form-label">User Name</label>
-    <div>
-      <input
-        type="text"
-        placeholder="Enter Name"
-        class="form-control"
-        name=""
-        id=""
-      />
-    </div>
-    <h2>Material Input</h2>
-    <mat-form-field appearance="outline">
-      <mat-label> UserName </mat-label>
-      <input
-        type="text"
-        ngModel
-        #UserName="ngModel"
-        name=""
-        id=""
-        matInput
-        placeholder="Enter Name"
-      />
-    </mat-form-field>
-  </div>
-  <div>Hello!.. {{ UserName.value }}</div>
-</div> -->
 <div class="container-fluid">
-  <h2>Date Picker</h2>
-  <div>
-    <mat-form-field appearance="outline">
-      <mat-label>Departure Date</mat-label>
-      <mat-datepicker-toggle
-        matSuffix
-        [for]="departure"
-      ></mat-datepicker-toggle>
-      <input type="text" matInput [matDatepicker]="departure" />
-      <mat-datepicker #departure></mat-datepicker>
-    </mat-form-field>
-    <div class="row">
-      <div class="col">
-        <button
-          mat-raised-button
-          color="primary"
-          matBadge="8"
-          matBadgePosition="before"
-          matBadgeColor="accent"
-        >
-          Action
-        </button>
-        <div>
-          <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
-        </div>
-
-        <div matBadge="4" matBadgeOverlap="false" class="demo-section col-3">
-          Text with a badge
-        </div>
-
-        <div
-          class="col-3"
-          matBadge="1"
-          matBadgeSize="large"
-          class="demo-section col-2 m-5"
-        >
-          Text with large badge
-        </div>
-
-        <div class="demo-section">
-          Button with a badge on the left
-          <button
-            mat-raised-button
-            color="primary"
-            matBadge="8"
-            matBadgePosition="before"
-            matBadgeColor="accent"
-          >
-            Action
-          </button>
-        </div>
-
-        <!-- <div class="demo-section">
-          Button toggles badge visibility
-          <button
-            mat-raised-button
-            matBadge="7"
-            [matBadgeHidden]="hidden"
-          >
-            Hide
-          </button>
-        </div> -->
-
-        <div class="demo-section">
-          Icon with a badge
-          <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
-          <!-- Include text description of the icon's meaning for screen-readers -->
-          <span class="cdk-visually-hidden">
-            Example with a home icon with overlaid badge showing the number 15
-          </span>
-        </div>
-      </div>
+  <h2>Without Lazy Loading</h2>
+  <div
+    class="overflow-auto"
+    style="height: 300px; border: 1px solid black; padding: 5px; width: 250px"
+  >
+    <div *ngFor="let item of Products">
+      <img [src]="item.image" width="150" height="150" alt="" />
     </div>
   </div>
+  <h2>With Lazy Loading</h2>
+  <cdk-virtual-scroll-viewport
+    itemSize="100"
+    class="overflow-auto"
+    style="height: 300px; border: 1px solid black; padding: 5px; width: 250px"
+  >
+    <div *cdkVirtualFor="let item of Products">
+      <img [src]="item.image" width="150" height="150" alt="" />
+    </div>
+  </cdk-virtual-scroll-viewport>
 </div>
