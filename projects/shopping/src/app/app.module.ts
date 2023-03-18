@@ -33,6 +33,7 @@ import { ProductsDataComponent } from './components/products-data/products-data.
 import { FiltersComponent } from './components/filters/filters.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialDemoComponent } from './components/material-demo/material-demo.component';
+import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { MaterialDemoComponent } from './components/material-demo/material-demo.
     ProductsDataComponent,
     FiltersComponent,
     MaterialDemoComponent,
+    PipeDemoComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +75,6 @@ import { MaterialDemoComponent } from './components/material-demo/material-demo.
     ScrollingModule,
   ],
   providers: [],
-  bootstrap: [MaterialDemoComponent],
+  bootstrap: [PipeDemoComponent],
 })
 export class AppModule {}

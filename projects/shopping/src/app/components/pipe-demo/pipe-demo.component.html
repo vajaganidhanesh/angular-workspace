@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="h2">Product Details</div>
+    <dl>
+      <dt>Name</dt>
+      <dd>{{ product.Name | titlecase }}</dd>
+      <dt>Price</dt>
+      <dd>{{ product.Price | currency }}</dd>
+      <dt>Date</dt>
+      <dd>{{ product.Mfd | date : "dd-MM-yy" }}</dd>
+    </dl>
+  </div>
+  <div>
+    {{ name }}
+  </div>
+  <button (click)="method(name)">click</button>
+</div>
