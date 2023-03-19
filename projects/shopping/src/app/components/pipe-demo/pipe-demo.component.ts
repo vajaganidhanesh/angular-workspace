@@ -65,6 +65,8 @@ export class PipeDemoComponent implements OnInit {
     this.showMessages = this.showMessages == false ? true : false;
   }
 
+  // custom pipe
+  public messagePipe: string = 'WelCome AnGulAR';
   ngOnInit(): void {
     this.Count = this.Message.length;
     console.log(JSON.stringify(this.product));

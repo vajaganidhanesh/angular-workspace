@@ -34,6 +34,8 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialDemoComponent } from './components/material-demo/material-demo.component';
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
+import { SentencePipe } from './pipes/sentences.pipe';
+import { UpperorderPipe } from './pipes/upperorder.pipe';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
     FiltersComponent,
     MaterialDemoComponent,
     PipeDemoComponent,
+    SentencePipe,
+    UpperorderPipe,
   ],
   imports: [
     BrowserModule,
