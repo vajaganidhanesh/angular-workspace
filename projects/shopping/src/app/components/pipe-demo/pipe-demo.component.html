@@ -1,4 +1,28 @@
 <div class="container-fluid">
+  <div class="mt-3 w-50">
+    <h2>Plural Demo</h2>
+    <div class="mb-3 input-group">
+      <input type="text" [(ngModel)]="InputMessage" class="form-control" />
+      <button class="btn btn-primary" (click)="sendClick()">
+        <span class="bi-send"></span> send
+      </button>
+    </div>
+    <button class="btn btn-primary position-relative" (click)="openMessages()">
+      <span class="bi bi-bell"></span>
+      {{ Message.length | i18nPlural : NotificationMap }}
+      <span class="badge bg-dark rounded rounded-circle position-absolute"
+        >{{ Count }}
+      </span>
+    </button>
+    <div class="mt-3" *ngIf="showMessages">
+      <ul class="list-unstyled">
+        <h3>Your Messages</h3>
+        <li *ngFor="let item of Message">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </div>
   <div class="row">
     <div class="h2">Product Details</div>
     <dl>

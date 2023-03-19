@@ -25,6 +25,7 @@ export class PipeDemoComponent implements OnInit {
     name.bold();
   }
 
+  // i18nSelect pipeline
   public delivery: { product: string; city: string }[] = [
     { product: 'Samsung', city: 'delhi' },
     { product: 'Nokia', city: 'Hyderabad' },
@@ -38,7 +39,34 @@ export class PipeDemoComponent implements OnInit {
     Mumbai: 'One day Delivery',
     other: 'Usually dispatched in 2-3 days',
   };
+  // ______________________________________
+
+  // ----------------i18nPural---------------
+  public Message: string[] = [];
+  public Count: number = 0;
+  public InputMessage: string = '';
+  public showMessages: boolean = false;
+
+  public NotificationMap = {
+    '=0': 'No New messages',
+    '=1': 'One New Message',
+    other: '# Messages',
+  };
+
+  public sendClick() {
+    var now = new Date();
+    this.Message.push(this.InputMessage + ' - ' + now.toLocaleTimeString());
+    this.Count = this.Message.length;
+    alert(this.InputMessage);
+    this.InputMessage = '';
+  }
+
+  public openMessages() {
+    this.showMessages = this.showMessages == false ? true : false;
+  }
+
   ngOnInit(): void {
+    this.Count = this.Message.length;
     console.log(JSON.stringify(this.product));
   }
 }
