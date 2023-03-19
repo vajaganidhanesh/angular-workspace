@@ -8,10 +8,41 @@
       <dd>{{ product.Price | currency }}</dd>
       <dt>Date</dt>
       <dd>{{ product.Mfd | date : "dd-MM-yy" }}</dd>
+      <dt>Percentage</dt>
+      <dd>{{ product.Rate | percent : "2.2" }}</dd>
     </dl>
   </div>
-  <div>
-    {{ name }}
+  <div class="mt-2">
+    {{ product | json }}
   </div>
-  <button (click)="method(name)">click</button>
+  <div class="mt-2">
+    <div *ngFor="let item of categories | slice : 0 : 2">
+      <div>{{ item | slice : 0 : 5 }}</div>
+    </div>
+  </div>
+  <div class="mt-2">
+    <div *ngFor="let item of categories | keyvalue">
+      {{ item.key }} - {{ item.value }}
+    </div>
+  </div>
+
+  <div class="mt-2">
+    <h2>Your Cart</h2>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>City</th>
+          <th>Delivery Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of delivery">
+          <td>{{ product.product }}</td>
+          <td>{{ product.city }}</td>
+          <td>{{ product.city | i18nSelect : status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
