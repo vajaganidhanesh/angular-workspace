@@ -36,6 +36,7 @@ import { MaterialDemoComponent } from './components/material-demo/material-demo.
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 import { SentencePipe } from './pipes/sentences.pipe';
 import { SortingPipePipe } from './pipes/sorting-pipe.pipe';
+import { CapchaService } from './service/capcha.service';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,7 @@ import { SortingPipePipe } from './pipes/sorting-pipe.pipe';
     MatButtonModule,
     ScrollingModule,
   ],
-  providers: [],
-  bootstrap: [PipeDemoComponent],
+  providers: [CapchaService],
+  bootstrap: [LoginComponent],
 })
 export class AppModule {}

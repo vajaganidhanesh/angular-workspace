@@ -7,6 +7,13 @@
         <dd><input type="text" class="form-control" /></dd>
         <dt>Password</dt>
         <dd><input type="password" class="form-control" /></dd>
+        <dt>
+          Verify Code
+          <button class="btn" (click)="NewCode()">
+            <span class="bi bi-arrow-clockwise fw-bold"></span>
+          </button>
+        </dt>
+        <dd>{{ code }}</dd>
       </dl>
       <button class="btn btn-primary w-100">Login</button>
     </form>
