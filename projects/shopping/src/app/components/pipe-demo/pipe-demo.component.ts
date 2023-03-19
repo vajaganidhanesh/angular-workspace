@@ -67,6 +67,16 @@ export class PipeDemoComponent implements OnInit {
 
   // custom pipe
   public messagePipe: string = 'WelCome AnGulAR';
+
+  // custom pipe Sorting
+  public Cities: string[] = [
+    'banglore',
+    'hyderabad',
+    'delhi',
+    'chennai',
+    'kochi',
+    'andhra',
+  ];
   ngOnInit(): void {
     this.Count = this.Message.length;
     console.log(JSON.stringify(this.product));

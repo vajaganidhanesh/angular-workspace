@@ -35,7 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialDemoComponent } from './components/material-demo/material-demo.component';
 import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 import { SentencePipe } from './pipes/sentences.pipe';
-import { UpperorderPipe } from './pipes/upperorder.pipe';
+import { SortingPipePipe } from './pipes/sorting-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -64,7 +64,7 @@ import { UpperorderPipe } from './pipes/upperorder.pipe';
     MaterialDemoComponent,
     PipeDemoComponent,
     SentencePipe,
-    UpperorderPipe,
+    SortingPipePipe,
   ],
   imports: [
     BrowserModule,
