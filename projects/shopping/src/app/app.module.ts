@@ -38,6 +38,7 @@ import { PipeDemoComponent } from './components/pipe-demo/pipe-demo.component';
 import { SentencePipe } from './pipes/sentences.pipe';
 import { SortingPipePipe } from './pipes/sorting-pipe.pipe';
 import { CapchaService } from './service/capcha.service';
+import { ServiceDemoComponent } from './components/service-demo/service-demo.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { CapchaService } from './service/capcha.service';
     PipeDemoComponent,
     SentencePipe,
     SortingPipePipe,
+    ServiceDemoComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,6 +84,6 @@ import { CapchaService } from './service/capcha.service';
     HttpClientModule,
   ],
   providers: [CapchaService],
-  bootstrap: [LoginComponent],
+  bootstrap: [BookingSiteComponent],
 })
 export class AppModule {}

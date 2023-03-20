@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { fakestoreapiContract } from '../../contracts/fakestoreapi';
+import { FakestoreService } from '../../service/fakestore.service';
 
 @Component({
   selector: 'app-booking-site',
@@ -7,7 +8,7 @@ import { fakestoreapiContract } from '../../contracts/fakestoreapi';
   styleUrls: ['./booking-site.component.css'],
 })
 export class BookingSiteComponent implements OnInit {
-  constructor() {}
+  constructor(private fakestore: FakestoreService) {}
   public Categories: string[] = [];
   public Products: fakestoreapiContract[] = [];
   public CartItems: fakestoreapiContract[] = [];
@@ -73,7 +74,9 @@ export class BookingSiteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.LoadCategories();
+    this.fakestore.GetCategories().subscribe((data) => {
+      this.Categories = data;
+    });
     this.LoadProducts(`http://fakestoreapi.com/products`);
   }
 }
