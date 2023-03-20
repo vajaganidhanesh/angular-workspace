@@ -8,6 +8,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { netflixRegister } from '../app/components/netflix-register.component';
@@ -78,6 +79,7 @@ import { CapchaService } from './service/capcha.service';
     MatBadgeModule,
     MatButtonModule,
     ScrollingModule,
+    HttpClientModule,
   ],
   providers: [CapchaService],
   bootstrap: [LoginComponent],
