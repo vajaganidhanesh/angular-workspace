@@ -2,6 +2,10 @@
   <form
     class="col-4"
     #frmRegister="ngForm"
+    [ngClass]="{
+      Validbg: frmRegister.valid,
+      Invalidbg: frmRegister.invalid
+    }"
     (submit)="SubmitClick(frmRegister.value)"
   >
     <h2>Register User</h2>
@@ -9,38 +13,57 @@
       <dt>User Name</dt>
       <dd>
         <input
+          required
           type="text"
           name="UserName"
           ngModel
           #UserName="ngModel"
           class="form-control"
+          minlength="4"
+          maxlength="10"
         />
+      </dd>
+      <dd
+        class="text-danger fs-6 fw-bold"
+        *ngIf="(UserName.invalid && frmRegister.submitted) || UserName.touched"
+      >
+        UserName is required
       </dd>
       <dt>Age</dt>
       <dd>
         <input
           type="number"
+          required
           name="Age"
           ngModel
           #Age="ngModel"
           class="form-control"
         />
       </dd>
-      <dt>City</dt>
-      <dd>
+      <dd
+        class="text-danger fs-6 fw-bold"
+        *ngIf="(Age.invalid && frmRegister.submitted) || Age.touched"
+      >
+        Age is required
+      </dd>
+      <!-- <dt>City</dt> -->
+      <!-- <dd>
         <select class="form-select" name="City" ngModel #City="ngModel">
           <option value="Delhi">Delhi</option>
           <option value="Hyderabad">Hyderabad</option>
         </select>
-      </dd>
+      </dd> -->
       <dd>
         <button type="submit" class="btn btn-primary">Register</button>
+        <button class="btn btn-primary" *ngIf="frmRegister.dirty">
+          save draft
+        </button>
       </dd>
     </dl>
   </form>
 
   <hr />
-  <div>
+  <!-- <div>
     <dl>
       <dt>Name</dt>
       <dd>{{ UserName.value }}</dd>
@@ -49,5 +72,14 @@
       <dt>City</dt>
       <dd>{{ City.value }}</dd>
     </dl>
+  </div> -->
+</div>
+<div class="container-fluid">
+  <div>
+    Pristine: {{ frmRegister.pristine }} <br />
+    Dirty: {{ frmRegister.dirty }} <br />
+    Valid: {{ frmRegister.valid }} <br />
+    Invalid: {{ frmRegister.invalid }} <br />
+    Submitted: {{ frmRegister.submitted }} <br />
   </div>
 </div>
