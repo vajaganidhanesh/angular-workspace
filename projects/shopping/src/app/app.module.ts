@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -40,6 +40,7 @@ import { SortingPipePipe } from './pipes/sorting-pipe.pipe';
 import { CapchaService } from './service/capcha.service';
 import { ServiceDemoComponent } from './components/service-demo/service-demo.component';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { TemplateFormComponent } from './components/template-form/template-form.
     SortingPipePipe,
     ServiceDemoComponent,
     TemplateFormComponent,
+    ReactiveFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,8 +86,9 @@ import { TemplateFormComponent } from './components/template-form/template-form.
     MatButtonModule,
     ScrollingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [CapchaService],
-  bootstrap: [TemplateFormComponent],
+  bootstrap: [ReactiveFormComponent],
 })
 export class AppModule {}

@@ -10,7 +10,7 @@ export class TemplateFormComponent {
     alert(JSON.stringify(formdata));
   }
 
-  public cityError: string = '';
+  public cityError: string = 'Please select city';
   public SelectCity(e: any) {
     if (e.target.value == '-1') {
       this.cityError = 'Please select city';
