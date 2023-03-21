@@ -100,7 +100,10 @@
           minlength="4"
         />
       </dd>
-      <dd class="text-danger" *ngIf="frmDetails.submitted && User.invalid">
+      <dd
+        class="text-danger"
+        *ngIf="(frmDetails.submitted && User.invalid) || User.touched"
+      >
         <small *ngIf="User.errors?.['required']">user Details required</small>
         <small *ngIf="User.errors?.['minlength']"
           >Name should be more then 4 characters short</small
@@ -119,13 +122,48 @@
           id=""
         />
       </dd>
-      <dd class="text-danger" *ngIf="frmDetails.submitted && mobile.invalid">
+      <dd
+        class="text-danger"
+        *ngIf="(frmDetails.submitted && mobile.invalid) || mobile.touched"
+      >
         <small *ngIf="mobile.errors?.['required']"
           >mobile number required</small
         >
         <small *ngIf="mobile.errors?.['pattern']"
           >Number should start with +91 with 10 digits</small
         >
+      </dd>
+      <dt>Password</dt>
+      <dd>
+        <input
+          class="form-control"
+          type="text"
+          name="Password"
+          ngModel
+          #Password="ngModel"
+          required
+          pattern="(?=.*[A-Z])\w{4,10}"
+        />
+      </dd>
+      <dd
+        class="text-danger"
+        *ngIf="(frmDetails.submitted && Password.invalid) || Password.touched"
+      >
+        <small *ngIf="Password.errors?.['required']">Password required</small>
+        <small *ngIf="Password.errors?.['pattern']"
+          >Password should contain 1 uppercase with min four characters</small
+        >
+      </dd>
+      <dt>City</dt>
+      <dd>
+        <select (change)="SelectCity($event)" class="form-select">
+          <option value="-1">select city</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Hyderabad">Hyderabad</option>
+        </select>
+      </dd>
+      <dd class="text-danger">
+        <small>{{ cityError }}</small>
       </dd>
       <dd>
         <button class="btn btn-primary">Register</button>

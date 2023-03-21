@@ -9,4 +9,13 @@ export class TemplateFormComponent {
   public SubmitClick(formdata: any) {
     alert(JSON.stringify(formdata));
   }
+
+  public cityError: string = '';
+  public SelectCity(e: any) {
+    if (e.target.value == '-1') {
+      this.cityError = 'Please select city';
+    } else {
+      this.cityError = '';
+    }
+  }
 }
