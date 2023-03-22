@@ -1,6 +1,6 @@
-<div class="container-fluid" (submit)="submitClick(frmRegister.value)">
-  <h2>Register</h2>
-  <form [formGroup]="frmRegister">
+<div class="container-fluid">
+  <h2>Product Register</h2>
+  <!-- <form [formGroup]="frmRegister">
     <dl>
       <dt>UserName</dt>
       <dd><input type="text" formControlName="UserName" /></dd>
@@ -10,5 +10,20 @@
       <dd><input type="text" name="" id="" formControlName="Mobile" /></dd>
     </dl>
     <button type="submit">Register</button>
+  </form> -->
+  <form [formGroup]="formRegister" (submit)="submitClick(formRegister.value)">
+    <dl>
+      <dt>UserName</dt>
+      <dd><input type="text" formControlName="username" /></dd>
+      <dt>Age</dt>
+      <dd><input type="text" formControlName="age" /></dd>
+      <div formGroupName="formVendor">
+        <dt>VenderName</dt>
+        <dd><input type="text" formControlName="vendorName" /></dd>
+        <dt>VenderRating</dt>
+        <dd><input type="text" formControlName="vendorRating" /></dd>
+      </div>
+    </dl>
+    <button>register</button>
   </form>
 </div>
