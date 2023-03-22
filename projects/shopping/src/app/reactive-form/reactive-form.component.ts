@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -13,12 +18,21 @@ export class ReactiveFormComponent {
   //   Mobile: new FormControl(''),
   // });
 
-  public formRegister = new FormGroup({
-    username: new FormControl(''),
-    age: new FormControl(0),
-    formVendor: new FormGroup({
-      vendorName: new FormControl(''),
-      vendorRating: new FormControl(0),
+  // public formRegister = new FormGroup({
+  //   username: new FormControl(''),
+  //   age: new FormControl(0),
+  //   formVendor: new FormGroup({
+  //     vendorName: new FormControl(''),
+  //     vendorRating: new FormControl(0),
+  //   }),
+  // });
+  constructor(private fb: FormBuilder) {}
+  public formRegister = this.fb.group({
+    username: this.fb.control(''),
+    age: this.fb.control(0),
+    formVendor: this.fb.group({
+      vendorName: this.fb.control(''),
+      vendorRating: this.fb.control(0),
     }),
   });
 
