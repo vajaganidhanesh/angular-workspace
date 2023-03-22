@@ -33,4 +33,15 @@ export class ReactiveFormComponent {
   public submitClick(e: any) {
     alert(JSON.stringify(e));
   }
+
+  public UpdateClick(e: any) {
+    e.preventDefault();
+    this.formRegister.patchValue({
+      age: 23,
+      formVendor: {
+        vendorName: 'Samsung Galaxy',
+        vendorRating: 4.5,
+      },
+    });
+  }
 }
