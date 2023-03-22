@@ -24,6 +24,23 @@
         <dd><input type="text" formControlName="vendorRating" /></dd>
       </div>
     </dl>
+    <div>
+      <h3>Upload Photos</h3>
+      <div>
+        <button class="btn btn-link" type="button" (click)="addInput()">
+          addInput
+        </button>
+      </div>
+      <div
+        class="mt-1 mb-1"
+        *ngFor="let files of Photos.controls; let i = index"
+      >
+        <input type="file" formControlName="i" />
+        <button type="button" class="bi bi-trash" (click)="removeInput(i)">
+          delete
+        </button>
+      </div>
+    </div>
     <span>
       <button>register</button>
       <button type="button" (click)="UpdateClick($event)">Update</button>

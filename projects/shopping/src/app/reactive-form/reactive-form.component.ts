@@ -4,6 +4,7 @@ import {
   FormControl,
   Validators,
   FormBuilder,
+  FormArray,
 } from '@angular/forms';
 
 @Component({
@@ -34,6 +35,7 @@ export class ReactiveFormComponent {
       vendorName: this.fb.control(''),
       vendorRating: this.fb.control(0),
     }),
+    Photos: this.fb.array([this.fb.control('')]),
   });
 
   get vendorName() {
@@ -42,6 +44,9 @@ export class ReactiveFormComponent {
 
   get vendorRating() {
     return this.formRegister.get('vendorRating');
+  }
+  get Photos(): FormArray {
+    return this.formRegister.get('Photos') as FormArray;
   }
 
   public submitClick(e: any) {
@@ -57,5 +62,11 @@ export class ReactiveFormComponent {
         vendorRating: 4.5,
       },
     });
+  }
+  public addInput() {
+    this.Photos.push(this.fb.control(''));
+  }
+  public removeInput(e: any) {
+    this.Photos.removeAt(e);
   }
 }
