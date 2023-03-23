@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AmazonAdminComponent } from './components/amazon-admin/amazon-admin.component';
 import { AmazonEletronicsComponent } from './components/amazon-eletronics/amazon-eletronics.component';
 import { AmazonHomeComponent } from './components/amazon-home/amazon-home.component';
 import { AmazonJeweleryComponent } from './components/amazon-jewelery/amazon-jewelery.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
     component: ProductDetailsComponent,
     children: [{ path: 'more/:id', component: AmazonMoreDetailsComponent }],
   },
+  { path: 'admin', component: AmazonAdminComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },
 ];

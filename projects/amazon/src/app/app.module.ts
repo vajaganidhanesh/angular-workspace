@@ -13,6 +13,7 @@ import { AmazonWomensComponent } from './components/amazon-womens/amazon-womens.
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { AmazonMoreDetailsComponent } from './components/amazon-more-details/amazon-more-details.component';
+import { AmazonAdminComponent } from './components/amazon-admin/amazon-admin.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AmazonMoreDetailsComponent } from './components/amazon-more-details/ama
     NotFoundComponent,
     ProductDetailsComponent,
     AmazonMoreDetailsComponent,
+    AmazonAdminComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
