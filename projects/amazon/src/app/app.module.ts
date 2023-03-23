@@ -14,6 +14,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { AmazonMoreDetailsComponent } from './components/amazon-more-details/amazon-more-details.component';
 import { AmazonAdminComponent } from './components/amazon-admin/amazon-admin.component';
+import { AmazonLoginComponent } from './components/amazon-login/amazon-login.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AmazonAdminComponent } from './components/amazon-admin/amazon-admin.com
     ProductDetailsComponent,
     AmazonMoreDetailsComponent,
     AmazonAdminComponent,
+    AmazonLoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
