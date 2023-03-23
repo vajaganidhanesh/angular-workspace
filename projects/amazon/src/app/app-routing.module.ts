@@ -4,8 +4,10 @@ import { AmazonEletronicsComponent } from './components/amazon-eletronics/amazon
 import { AmazonHomeComponent } from './components/amazon-home/amazon-home.component';
 import { AmazonJeweleryComponent } from './components/amazon-jewelery/amazon-jewelery.component';
 import { AmazonMensComponent } from './components/amazon-mens/amazon-mens.component';
+import { AmazonMoreDetailsComponent } from './components/amazon-more-details/amazon-more-details.component';
 import { AmazonWomensComponent } from './components/amazon-womens/amazon-womens.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 const routes: Routes = [
   { path: 'home', component: AmazonHomeComponent },
@@ -13,6 +15,11 @@ const routes: Routes = [
   { path: 'electronics', component: AmazonEletronicsComponent },
   { path: 'mens', component: AmazonMensComponent },
   { path: 'womens', component: AmazonWomensComponent },
+  {
+    path: 'details/:id',
+    component: ProductDetailsComponent,
+    children: [{ path: 'more/:id', component: AmazonMoreDetailsComponent }],
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },
 ];
