@@ -9,7 +9,9 @@ import { fakestoreapiContract } from 'projects/shopping/src/app/contracts/fakest
 export class FakestoreService {
   constructor(private http: HttpClient) {}
   public GetProducts(): Observable<fakestoreapiContract[]> {
-    return this.http.get<fakestoreapiContract[]>('');
+    return this.http.get<fakestoreapiContract[]>(
+      'http://fakestoreapi.com/products'
+    );
   }
 
   public GetCategories(): Observable<string[]> {
