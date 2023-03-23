@@ -1,1 +1,16 @@
-<p>amazon-jewelery works!</p>
+<div class="container-fluid">
+  <div class="d-flex flex-wrap w-100 justify-content-center">
+    <div
+      class="card d-flex justify-content-center align-items-center m-3"
+      *ngFor="let item of products"
+    >
+      <img
+        [src]="item.image"
+        class="img-fluid"
+        width="200"
+        height="200"
+        alt=""
+      />
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { AmazonHomeComponent } from './components/amazon-home/amazon-home.compon
 import { AmazonEletronicsComponent } from './components/amazon-eletronics/amazon-eletronics.component';
 import { AmazonMensComponent } from './components/amazon-mens/amazon-mens.component';
 import { AmazonWomensComponent } from './components/amazon-womens/amazon-womens.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,9 @@ import { AmazonWomensComponent } from './components/amazon-womens/amazon-womens.
     AmazonEletronicsComponent,
     AmazonMensComponent,
     AmazonWomensComponent,
+    NotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AmazonIndexComponent],
 })

@@ -1,1 +1,35 @@
-<p>amazon-index works!</p>
+<div class="container-fluid g-0">
+  <header
+    class="d-flex bg-dark text-white justify-content-between p-2 align-items-center"
+  >
+    <div>
+      <h1>Shopper.</h1>
+    </div>
+
+    <nav>
+      <a routerLink="home" class="btn text-white">Home</a>
+      <a routerLink="electronics" class="btn text-white"> Electronics </a>
+      <a routerLink="jewelery" class="btn text-white">Jewelery</a>
+      <a routerLink="mens" class="btn text-white">Men's Fashion</a>
+      <a routerLink="womens" class="btn text-white"> Women's Fashion </a>
+    </nav>
+    <div>
+      <button class="btn">
+        <span class="bi bi-search fw-bold text-white"></span>
+      </button>
+      <button class="btn">
+        <span class="bi bi-heart text-white"></span>
+      </button>
+      <button class="btn">
+        <span class="bi bi-person text-white"></span>
+      </button>
+      <button class="btn position-relative">
+        <span class="bi bi-cart text-white"></span>
+        <span class="badge bg-danger rounded-circle position-absolute">0 </span>
+      </button>
+    </div>
+  </header>
+  <section class="mt-3">
+    <router-outlet> </router-outlet>
+  </section>
+</div>
