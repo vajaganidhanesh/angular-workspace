@@ -11,6 +11,8 @@ import { AmazonEletronicsComponent } from './components/amazon-eletronics/amazon
 import { AmazonMensComponent } from './components/amazon-mens/amazon-mens.component';
 import { AmazonWomensComponent } from './components/amazon-womens/amazon-womens.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { AmazonMoreDetailsComponent } from './components/amazon-more-details/amazon-more-details.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     AmazonMensComponent,
     AmazonWomensComponent,
     NotFoundComponent,
+    ProductDetailsComponent,
+    AmazonMoreDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { fakestoreapiContract } from 'projects/shopping/src/app/contracts/fakestoreapi';
+import { fakestoreapiContract } from '../../contracts/FakestoreProducts';
 import { FakestoreService } from '../../services/Fakestore.service';
 
 @Component({

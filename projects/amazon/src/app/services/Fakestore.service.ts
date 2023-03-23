@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { fakestoreapiContract } from 'projects/shopping/src/app/contracts/fakestoreapi';
+import { fakestoreapiContract } from '../../app/contracts/FakestoreProducts';
 
 @Injectable({
   providedIn: 'any',
@@ -25,6 +25,11 @@ export class FakestoreService {
   ): Observable<fakestoreapiContract[]> {
     return this.http.get<fakestoreapiContract[]>(
       `http://fakestoreapi.com/products/category/${Categorie}`
+    );
+  }
+  public GetProduct(id: string): Observable<fakestoreapiContract> {
+    return this.http.get<fakestoreapiContract>(
+      `http://fakestoreapi.com/products/${id}`
     );
   }
 }
