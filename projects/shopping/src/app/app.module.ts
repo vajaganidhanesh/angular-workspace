@@ -41,6 +41,7 @@ import { CapchaService } from './service/capcha.service';
 import { ServiceDemoComponent } from './components/service-demo/service-demo.component';
 import { TemplateFormComponent } from './components/template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ReactiveValidationsComponent } from './components/reactive-validations/reactive-validations.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ServiceDemoComponent,
     TemplateFormComponent,
     ReactiveFormComponent,
+    ReactiveValidationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,6 +91,6 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     ReactiveFormsModule,
   ],
   providers: [CapchaService],
-  bootstrap: [ReactiveFormComponent],
+  bootstrap: [ReactiveValidationsComponent],
 })
 export class AppModule {}
