@@ -15,6 +15,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { AmazonMoreDetailsComponent } from './components/amazon-more-details/amazon-more-details.component';
 import { AmazonAdminComponent } from './components/amazon-admin/amazon-admin.component';
 import { AmazonLoginComponent } from './components/amazon-login/amazon-login.component';
+import { AmazonCartComponent } from './components/amazon-cart/amazon-cart.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AmazonLoginComponent } from './components/amazon-login/amazon-login.com
     AmazonMoreDetailsComponent,
     AmazonAdminComponent,
     AmazonLoginComponent,
+    AmazonCartComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

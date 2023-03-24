@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "shopping-app-40483": {
+      "hosting": {
+        "amazon": [
+          "shopping-app-40483"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "shopping-app-40483"
+  }
+}

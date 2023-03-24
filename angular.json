@@ -184,6 +184,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "amazon:build:production",
+            "firebaseProject": "shopping-app-40483",
+            "firebaseHostingSite": "shopping-app-40483"
+          }
         }
       }
     }
