@@ -91,6 +91,6 @@ import { ReactiveValidationsComponent } from './components/reactive-validations/
     ReactiveFormsModule,
   ],
   providers: [CapchaService],
-  bootstrap: [ReactiveValidationsComponent],
+  bootstrap: [ParentComponent],
 })
 export class AppModule {}
